@@ -25,7 +25,7 @@ app.use("/api/users", userRoutes);
 
 app.use(express.static(path.join(__dirname, '/frontend/dist')))
 
-
+//any route that is not defined above will be redirected to the frontend,so we can run frontend routes on the server itself
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'frontend', 'dist', 'index.html'))
 })
